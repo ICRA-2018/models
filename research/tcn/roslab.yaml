@@ -1,0 +1,26 @@
+name: tcn
+
+base:
+  ubuntu: 16.04
+  cuda: 10.0-devel
+  cudnn: 7-devel
+  opengl: runtime
+
+apt:
+  - python-setuptools
+  - python-dev
+  - python-tk
+  - python-opencv
+  - zip zlib1g-dev unzip wget
+
+pip:
+  - tf-nightly-gpu
+  - matplotlib
+  - scikit-learn
+  - pyyaml
+
+custom:
+  - wget https://github.com/bazelbuild/bazel/releases/download/0.23.2/bazel-0.23.2-installer-linux-x86_64.sh
+  - chmod +x bazel-0.23.2-installer-linux-x86_64.sh
+  - ./bazel-0.23.2-installer-linux-x86_64.sh
+
